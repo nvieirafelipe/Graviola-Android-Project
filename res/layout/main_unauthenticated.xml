@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#FFFFFF">
+	
+    <LinearLayout 
+    	android:id="@+id/linearLayout1" 
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content" 
+    	android:orientation="horizontal"
+    	android:layout_margin="6dp">
+    
+		<Button android:id="@+id/transport_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/transport" 
+			android:textSize="36dp"
+			android:padding="0dp" 
+			style="@style/menu_button" 
+			android:clickable="true" 
+			android:cursorVisible="true" />
+    </LinearLayout>
+		
+	<ScrollView android:id="@+id/scrollView1" 
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
+		android:layout_margin="6dp">
+		
+		<LinearLayout
+		    android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent">
+		    
+			<ImageView android:layout_width="fill_parent" android:src="@drawable/logo" android:layout_height="wrap_content" android:id="@+id/logo"></ImageView>
+
+			<LinearLayout
+			    android:orientation="horizontal"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent">
+			    
+				<TextView android:layout_width="wrap_content" 
+				    android:layout_height="wrap_content" android:text="@string/new_to_nojam"/>
+
+				<Button android:id="@+id/join_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:background="#FFF"
+					android:textColor="#000"
+					android:text="@string/join_today" 
+					android:clickable="true" 
+					android:cursorVisible="true" android:padding="12px"/>				    
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

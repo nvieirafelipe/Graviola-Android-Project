@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#FFFFFF">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_margin="6dp">
+
+		<ImageView android:layout_width="fill_parent" android:src="@drawable/logo_login" android:layout_height="wrap_content" android:id="@+id/login_logo"></ImageView>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/username"/>
+	    <EditText android:id="@+id/username"     
+	    	android:layout_height="wrap_content" 
+	    	android:layout_width="fill_parent" android:singleLine="true"/>
+	    
+	    <TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/password"/>
+	    <EditText android:id="@+id/password" 
+	    	android:layout_height="wrap_content" 
+		    android:layout_width="fill_parent" 
+		    android:inputType="textPassword"
+		    android:lines="1"/>
+	    
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:weightSum="1"
+			android:paddingLeft="36dp"
+			android:paddingRight="36dp">
+			
+		    <Button android:id="@+id/cancel_button" 
+		    	android:layout_width="0px" 
+		    	android:layout_height="42dp" 
+		    	android:layout_weight="0.5" 
+		    	android:text="@string/cancel"
+		    	android:clickable="true" 
+				android:cursorVisible="true" />
+		    <Button android:id="@+id/ok_button" 
+		    	android:layout_width="0px" 
+		    	android:layout_height="42dp" 
+	    		android:layout_weight="0.5" 
+	    		android:text="@string/ok" 
+	    		android:clickable="true" 
+				android:cursorVisible="true"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

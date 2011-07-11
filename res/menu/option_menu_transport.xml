@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/option_transport_type_button"
+    	android:title="@string/transport_type">
+    	
+		<menu xmlns:android="http://schemas.android.com/apk/res/android">
+			<group android:checkableBehavior="all">
+				<item android:id="@+id/option_transport_type_bus_checkbox"
+					android:title="@string/bus"
+					android:checkable="true" />
+				<item android:id="@+id/option_transport_type_metro_checkbox"
+					android:title="@string/metro"
+					android:checkable="true" />
+				<item android:id="@+id/option_transport_type_train_checkbox"
+					android:title="@string/train"
+					android:checkable="true" />
+			</group>
+		</menu>
+    </item>
+    <item android:id="@+id/option_route_button" 
+        android:title="@string/route" 
+        android:visible="true">
+          
+		<menu xmlns:android="http://schemas.android.com/apk/res/android">
+			<group android:checkableBehavior="single">
+				<item android:id="@+id/option_transport_type_bus_checkbox1"
+					android:title="@string/bus"/>
+				<item android:id="@+id/option_transport_type_metro_checkbox1"
+					android:title="@string/metro"/>
+				<item android:id="@+id/option_transport_type_train_checkbox1"
+					android:title="@string/train"/>
+				<item android:id="@+id/option_transport_type_bus_checkbox2"
+					android:title="@string/bus"/>
+				<item android:id="@+id/option_transport_type_metro_checkbox2"
+					android:title="@string/metro"/>
+				<item android:id="@+id/option_transport_type_train_checkbox2"
+					android:title="@string/train"/>
+				<item android:id="@+id/option_transport_type_bus_checkbox3"
+					android:title="@string/bus"/>
+				<item android:id="@+id/option_transport_type_metro_checkbox3"
+					android:title="@string/metro"/>
+				<item android:id="@+id/option_transport_type_train_checkbox3"
+					android:title="@string/train"/>
+			</group>
+		</menu>
+	</item>
+</menu>

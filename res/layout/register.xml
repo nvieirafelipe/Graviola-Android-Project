@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#FFFFFF">
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_margin="6dp">
+
+		<ImageView android:layout_width="fill_parent" android:src="@drawable/logo_login" android:layout_height="wrap_content" android:id="@+id/login_logo"></ImageView>
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:weightSum="1"
+			android:layout_marginTop="6dp">
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical"
+				android:layout_width="0dp"
+				android:layout_height="fill_parent"
+				android:layout_weight="0.5">
+	
+				<TextView
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/first_name"/>
+			    <EditText android:id="@+id/first_name"     
+			    	android:layout_height="wrap_content" 
+			    	android:layout_width="fill_parent" 
+			    	android:singleLine="true"/>
+			</LinearLayout>
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					android:orientation="vertical"
+					android:layout_width="0dp"
+					android:layout_height="fill_parent"
+					android:layout_weight="0.5">
+			
+				<TextView
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:text="@string/last_name"/>
+			    <EditText android:id="@+id/last_name"     
+			    	android:layout_height="wrap_content" 
+			    	android:layout_width="fill_parent" 
+			    	android:singleLine="true"/>
+			</LinearLayout>
+		</LinearLayout>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/email"/>
+	    <EditText android:id="@+id/email"     
+	    	android:layout_height="wrap_content" 
+	    	android:layout_width="fill_parent" android:singleLine="true"/>
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/username"
+			android:layout_marginTop="18dp"/>
+	    <EditText android:id="@+id/username"     
+	    	android:layout_height="wrap_content" 
+	    	android:layout_width="fill_parent" android:singleLine="true"/>
+
+	    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:weightSum="1">
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical"
+				android:layout_width="0dp"
+				android:layout_height="fill_parent"
+				android:layout_weight="0.5">
+			    
+			    <TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/password"/>
+			    <EditText android:id="@+id/password" 
+			    	android:layout_height="wrap_content" 
+				    android:layout_width="fill_parent" 
+				    android:inputType="textPassword"
+				    android:lines="1"/>
+			</LinearLayout>		
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical"
+				android:layout_width="0dp"
+				android:layout_height="fill_parent"
+				android:layout_weight="0.5">
+	
+			    <TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/password_again"/>
+			    <EditText android:id="@+id/password_again" 
+			    	android:layout_height="wrap_content" 
+				    android:layout_width="fill_parent" 
+				    android:inputType="textPassword"
+				    android:lines="1"/>
+			</LinearLayout>
+		</LinearLayout>    
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingLeft="36dp"
+			android:paddingRight="36dp"
+			android:weightSum="1">
+			
+		    <Button android:id="@+id/cancel_button" 
+		    	android:layout_width="0px" 
+		    	android:layout_height="42dp" 
+		    	android:layout_weight="0.5" 
+		    	android:text="@string/cancel"
+		    	android:clickable="true" 
+				android:cursorVisible="true" />
+		    <Button android:id="@+id/ok_button" 
+		    	android:layout_width="0px" 
+		    	android:layout_height="42dp" 
+	    		android:layout_weight="0.5" 
+	    		android:text="@string/ok" 
+	    		android:clickable="true" 
+				android:cursorVisible="true" />
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

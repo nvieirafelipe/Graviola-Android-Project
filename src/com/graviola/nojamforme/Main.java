@@ -11,11 +11,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class Main extends GraviolaAndroidProject {
+public class Main extends GraviolaAndroidProject implements OnTouchListener {
 	/** Constants to determine what activity is being referred to, and treat their response. */
 	public static final int LOGIN_ACTIVITY = 1;
 	public static final int REGISTER_ACTIVITY = 2;
@@ -44,6 +47,23 @@ public class Main extends GraviolaAndroidProject {
         
         /** Remove the receiver of status of network connectivity. */
         removeConnectivityListener();
+	}
+	
+	@Override
+	public boolean onTouch(View arg0, MotionEvent arg1) {
+		// TODO Auto-generated method stub
+		switch (arg1.getAction()){
+	        case MotionEvent.ACTION_DOWN:{
+	        	Toast.makeText(Main.this, "Down!", Toast.LENGTH_SHORT).show();
+	        	break;
+	        }
+	        case MotionEvent.ACTION_UP:{
+	        	Toast.makeText(Main.this, "Up!", Toast.LENGTH_SHORT).show();
+	        	break;
+	        }
+		}
+        
+		return true;
 	}
 	
 	/** Called when the option menu is created. */
@@ -94,13 +114,17 @@ public class Main extends GraviolaAndroidProject {
         	
             return true;
         case R.id.option_login_button:
-            /** Create an intent to perform an operation, this case call an Activity. */
-        	myIntent = new Intent(this.getBaseContext(), Login.class);
-        	/** Start an activity and wait for a result. */
-            startActivityForResult(myIntent, LOGIN_ACTIVITY);
-            /** Transition of the screens. */
-            overridePendingTransition(R.anim.pull_in_down,R.anim.push_up_out); 
-            
+            if (isConnected()) {
+	            /** Create an intent to perform an operation, this case call an Activity. */
+	        	myIntent = new Intent(this.getBaseContext(), Login.class);
+	        	/** Start an activity and wait for a result. */
+	            startActivityForResult(myIntent, LOGIN_ACTIVITY);
+	            /** Transition of the screens. */
+	            overridePendingTransition(R.anim.pull_in_down,R.anim.push_up_out); 
+            } else {
+            	Toast.makeText(Main.this, "You are not connected. Can't connect to the server!", Toast.LENGTH_SHORT).show();
+            }
+
             return true;
         case R.id.option_logout_button:
         	Context context = this.getApplicationContext();
@@ -172,7 +196,16 @@ public class Main extends GraviolaAndroidProject {
         editor.putBoolean("connectivity", status);
         editor.commit();
     }
-    
+ 
+    /** Checks if the mobile is connected to the internet to show gooogle maps. */
+    public boolean isConnected() {
+    	Context context = this.getApplicationContext();
+    	/** Create, if not exists, the preference GraviolaMOB. */
+        SharedPreferences settings = context.getSharedPreferences("GraviolaMOB", MODE_PRIVATE);
+        /** Check the preference connectivity and return false if is not set. */
+        return settings.getBoolean("connectivity", false);
+    }
+
     /** Checks whether there is an authenticated user. */
     public boolean isAuthenticated() {
     	Context context = this.getApplicationContext();
@@ -220,10 +253,16 @@ public class Main extends GraviolaAndroidProject {
     /** Show screen of authenticated user. */
     private void showAuthenticatedMain() {
         setContentView(R.layout.main_authenticated);
+        LinearLayout layoutMain = (LinearLayout) findViewById(R.id.main_authenticated_layout);
+        layoutMain.setOnTouchListener((OnTouchListener) this);
+
     }
 
    /** Show screen of unauthenticated user. */
    private void showUnauthenticatedMain() {
+        LinearLayout layoutMain = (LinearLayout) findViewById(R.id.main_unauthenticated_layout);
+        layoutMain.setOnTouchListener((OnTouchListener) this);
+
         setContentView(R.layout.main_unauthenticated);
 
         /** Setting join button, and your behavior. */

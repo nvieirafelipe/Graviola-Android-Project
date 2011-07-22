@@ -3,7 +3,9 @@
     <string name="app_name">No Jam</string>
 	<string name="bus">Bus</string>
 	<string name="cancel">Cancel</string>
+	<string name="connecting_to_the_server">Connecting to the server...</string>
 	<string name="email">E-mail</string>
+	<string name="email_address">E-mail address</string>
 	<string name="first_name">First name</string>
 	<string name="exit">Exit</string>
     <string name="home">Home</string>
